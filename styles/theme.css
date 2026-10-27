@@ -1,0 +1,19 @@
+/* ===== Colour designs: Gold Noir (default), Ocean Neon, Royal Violet. Picked on the dashboard, saved in the browser. ===== */
+:root, :root[data-theme="noir"] {
+  --bg: #07070a; --glow1: rgba(212,175,55,.16); --glow2: rgba(246,226,122,.06);
+  --card: #111114; --card2: #17171b; --inset: #0c0c0f; --line: #2c2612;
+  --gold: #d4af37; --accent2: #f6e27a; --on: #0a0a0a; --accent-soft: rgba(212,175,55,.12); --accent-glow: rgba(212,175,55,.35);
+  --text: #f4eedb; --muted: #8f896d; --green: #4cc38a; --red: #ec6a58;
+}
+:root[data-theme="ocean"] {
+  --bg: #040a18; --glow1: rgba(34,211,238,.17); --glow2: rgba(59,130,246,.10);
+  --card: #0a1426; --card2: #0f1c34; --inset: #070f1e; --line: #15335a;
+  --gold: #22d3ee; --accent2: #7dd3fc; --on: #03121c; --accent-soft: rgba(34,211,238,.12); --accent-glow: rgba(34,211,238,.38);
+  --text: #e6f3ff; --muted: #7b94b4; --green: #34e0a1; --red: #ff6b7d;
+}
+:root[data-theme="royal"] {
+  --bg: #090513; --glow1: rgba(167,139,250,.20); --glow2: rgba(245,196,81,.07);
+  --card: #130d24; --card2: #1a1230; --inset: #0e0919; --line: #35255e;
+  --gold: #a78bfa; --accent2: #f5c451; --on: #0f0820; --accent-soft: rgba(167,139,250,.14); --accent-glow: rgba(167,139,250,.40);
+  --text: #f1ebff; --muted: #9a8cba; --green: #46d39a; --red: #f4668a;
+}

@@ -1,0 +1,44 @@
+/* Settings: floating button (bottom left) + drawer that opens over the dashboard */
+.sfab { position: fixed; z-index: 58; left: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); width: 62px; height: 62px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; padding: 0;
+  color: var(--gold); background: linear-gradient(180deg, var(--card2), var(--card)); border: 1px solid color-mix(in srgb, var(--gold) 55%, var(--line)); box-shadow: 0 8px 28px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.03); transition: transform .18s, color .18s, border-color .18s; }
+.sfab:hover { transform: translateY(-2px) rotate(45deg); color: var(--accent2); border-color: var(--gold); }
+.sfab:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+.sfab.open { color: var(--on); background: linear-gradient(135deg, var(--accent2), var(--gold)); }
+.sfabdot { position: absolute; top: 6px; right: 6px; width: 13px; height: 13px; border-radius: 50%; background: var(--red); border: 2px solid var(--bg); }
+
+.sback { position: fixed; inset: 0; z-index: 69; background: rgba(0,0,0,.55); backdrop-filter: blur(2px); animation: sfade .18s ease-out; }
+.sdrawer { position: fixed; z-index: 70; top: 0; bottom: 0; left: 0; width: min(520px, 100vw); display: flex; flex-direction: column; overflow: hidden;
+  background: linear-gradient(180deg, var(--card2), var(--card)); border-right: 1px solid color-mix(in srgb, var(--gold) 45%, var(--line)); box-shadow: 24px 0 70px rgba(0,0,0,.6); animation: sslide .22s ease-out; }
+@keyframes sslide { from { transform: translateX(-24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes sfade { from { opacity: 0; } to { opacity: 1; } }
+.shead { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; background: linear-gradient(135deg, var(--accent-soft), transparent); border-bottom: 1px solid var(--line); }
+.stitlebar { font-size: 19px; font-weight: 800; }
+.stabs { display: flex; gap: 6px; padding: 10px 14px 0; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: none; }
+.stabs::-webkit-scrollbar { display: none; }
+.stab { flex: 0 0 auto; min-height: 40px; padding: 0 14px; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--muted); font-size: 14px; font-weight: 700; cursor: pointer; }
+.stab:hover { color: var(--text); }
+.stab.on { color: var(--gold); border-bottom-color: var(--gold); }
+.stab:focus-visible { outline: 2px solid var(--text); outline-offset: -2px; border-radius: 6px; }
+.sbody { flex: 1 1 auto; overflow-y: auto; padding: 8px 18px 20px; overscroll-behavior: contain; }
+.ssec { display: grid; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.ssec:last-child { border-bottom: 0; }
+.stitle { margin: 0; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 800; }
+.trow { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.tlabel { font-size: 14.5px; font-weight: 700; }
+.sfoot { display: flex; justify-content: space-between; gap: 10px; padding: 12px 18px calc(12px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); background: var(--card); }
+@media (max-width: 560px) { .sfab { left: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); width: 58px; height: 58px; } }
+
+/* form fields */
+.fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
+.field { display: grid; gap: 4px; align-content: start; }
+.field input { min-height: 40px; background: var(--inset); border: 1px solid var(--line); border-radius: 10px; color: var(--text); padding: 0 10px; font-size: 16px; }
+.field input:focus { outline: 1px solid var(--gold); }
+
+/* colour design swatches */
+.themes { display: flex; align-items: center; gap: 8px; }
+.sw { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--line); cursor: pointer; padding: 0; position: relative; transition: transform .15s; }
+.sw:hover { transform: scale(1.1); }
+.sw.on { border-color: var(--text); box-shadow: 0 0 0 3px var(--accent-glow); }
+.sw.noir { background: conic-gradient(from 45deg, #0a0a0a 0 50%, #d4af37 50% 100%); }
+.sw.ocean { background: conic-gradient(from 45deg, #040a18 0 50%, #22d3ee 50% 100%); }
+.sw.royal { background: conic-gradient(from 45deg, #130d24 0 50%, #a78bfa 50% 100%); }

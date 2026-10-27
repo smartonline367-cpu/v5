@@ -1,0 +1,42 @@
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; color: var(--text); font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif; background-color: var(--bg);
+  background-image: radial-gradient(900px 480px at 8% -8%, var(--glow1), transparent 70%), radial-gradient(800px 460px at 100% 0%, var(--glow2), transparent 70%);
+  background-repeat: no-repeat; min-height: 100vh;
+}
+.wrap { max-width: 1720px; margin: 0 auto; padding: 18px 16px 48px; }
+
+/* ---------- basics (also used by the Prediction tab) ---------- */
+.card { background: linear-gradient(180deg, var(--card2), var(--card)); border: 1px solid var(--line); border-radius: 16px; padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+.label { color: var(--muted); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.big { font-size: 32px; font-weight: 800; color: var(--gold); margin-top: 6px; letter-spacing: -.5px; }
+.big.sm { font-size: 21px; margin-top: 2px; }
+.small { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+.small ul, ul.small { padding-left: 18px; }
+.up { color: var(--green); } .down { color: var(--red); } .muted { color: var(--muted); }
+.error { color: var(--red); font-size: 13px; margin-top: 8px; }
+.warn { color: var(--accent2); font-size: 13px; margin-top: 10px; line-height: 1.5; border-left: 3px solid var(--gold); padding: 6px 0 6px 10px; background: var(--accent-soft); border-radius: 0 8px 8px 0; }
+.note { color: var(--muted); font-size: 12px; margin-top: 24px; line-height: 1.5; }
+.row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+.right { text-align: right; }
+.grow { flex: 1 1 220px; }
+
+.dash { display: grid; gap: 14px; margin-top: 14px; grid-template-columns: minmax(0, 1fr); }
+.dash > * { min-width: 0; }
+.side { display: grid; gap: 14px; align-content: start; min-width: 0; }
+
+/* ---------- chips, switch ---------- */
+.chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chips.wrapchips { flex-wrap: wrap; overflow: visible; margin-top: 6px; }
+.chip { flex: 0 0 auto; min-height: 38px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--text); font-size: 13px; font-weight: 600; cursor: pointer; transition: all .15s; }
+.chip:hover { border-color: var(--gold); color: var(--gold); }
+.chip.on { background: linear-gradient(135deg, var(--accent2), var(--gold)); border-color: transparent; color: var(--on); font-weight: 800; box-shadow: 0 4px 18px var(--accent-glow); }
+.chip:disabled { opacity: .5; cursor: default; }
+.chip:focus-visible, .switch:focus-visible, .tile:focus-visible, .sw:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; }
+.switchrow { display: flex; align-items: center; gap: 14px; }
+.switch { width: 64px; height: 34px; border-radius: 999px; border: 1px solid var(--gold); background: var(--inset); position: relative; cursor: pointer; padding: 0; flex: 0 0 auto; }
+.switch span { position: absolute; top: 3px; left: 3px; width: 26px; height: 26px; border-radius: 50%; background: var(--gold); transition: transform .2s; }
+.switch.on { background: rgba(76,195,138,.15); border-color: var(--green); }
+.switch.on span { transform: translateX(30px); background: var(--green); box-shadow: 0 0 14px rgba(76,195,138,.7); }
